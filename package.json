@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/zahar517/Drone-Cafe/issues"
   },
-  "homepage": "https://github.com/zahar517/Drone-Cafe#readme"
+  "homepage": "https://github.com/zahar517/Drone-Cafe#readme",
+  "devDependencies": {
+    "bower": "^1.8.0"
+  }
 }
