@@ -22,6 +22,12 @@ module.exports = function(config) {
       'karma-mocha-reporter'
     ],
 
+    browserConsoleLogOptions: {
+      level: 'log',
+      format: '%b %T: %m',
+      terminal: true
+    },
+
     reporters: ['mocha']
   });
 };
