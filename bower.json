@@ -1,0 +1,22 @@
+{
+  "name": "dron-cafe",
+  "description": "Dron Cafe",
+  "main": "index.html",
+  "authors": [
+    "zahar517"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Drone",
+    "cafe"
+  ],
+  "homepage": "https://github.com/zahar517/Drone-Cafe",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ]
+}

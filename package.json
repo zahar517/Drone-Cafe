@@ -1,0 +1,22 @@
+{
+  "name": "dron-cafe",
+  "version": "0.0.1",
+  "description": "Dron Cafe",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zahar517/Drone-Cafe.git"
+  },
+  "keywords": [
+    "Drone",
+    "cafe"
+  ],
+  "author": "zahar517",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zahar517/Drone-Cafe/issues"
+  },
+  "homepage": "https://github.com/zahar517/Drone-Cafe#readme"
+}
