@@ -1,0 +1,32 @@
+<div class="userLogin"  layout="row" layout-align="center center">
+  <div md-whiteframe="2">
+    <md-toolbar class="md-hue-2">
+      <h1>{{$ctrl.title}}</h1>
+    </md-toolbar>
+
+    <form name="$ctrl.loginForm" novalidate>
+      <md-input-container>
+        <label>Name</label>
+        <input ng-model="$ctrl.newUser.name" type="text" name="username" required>
+
+        <div ng-messages for="$ctrl.loginForm.username.$error">
+          <div ng-message="required">Name Required</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Email</label>
+        <input ng-model="$ctrl.newUser.email" type="email" name="email" required>
+
+        <div ng-messages="$ctrl.loginForm.email.$error">
+          <div ng-message="required">Email Required</div>
+        </div>
+      </md-input-container>
+
+      <div>
+        <md-button class="md-raised md-primary" ng-click="$ctrl.checkUser($ctrl.newUser)" ng-disabled="$ctrl.loginForm.$invalid">Enter</md-button>
+      </div>
+    </form>
+
+  </div>
+</div>
