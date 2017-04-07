@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('DronCafe', []);
+let DroneCafe = angular.module('DroneCafe', ['ui.router', 'ngMaterial']);
