@@ -1,0 +1,12 @@
+<div class="customer">
+  <md-toolbar layout="row" class="md-hue-2">
+    <div class="md-toolbar-tools">
+      <span>Profile</span>
+    </div>
+  </md-toolbar>
+  <md-content>
+    <p>Your name: {{$ctrl.username}}</p>
+    <p>Your balance: {{$ctrl.balance}}</p>
+    <md-button class="md-raised md-primary" ng-click="$ctrl.addMoney()">Recharge</md-button>
+  </md-content>
+</div>
