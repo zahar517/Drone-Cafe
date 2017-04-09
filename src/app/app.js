@@ -1,8 +1,8 @@
 'use strict';
 
-let DroneCafe = angular.module('DroneCafe', ['ui.router', 'ngMaterial', 'ngMessages']);
+angular.module('DroneCafe', ['ui.router', 'ngMaterial', 'ngMessages', 'DroneCafe.UserLogin'])
 
-DroneCafe.config($stateProvider => {
+.config($stateProvider => {
   $stateProvider.
     state('home', {
       url: '',

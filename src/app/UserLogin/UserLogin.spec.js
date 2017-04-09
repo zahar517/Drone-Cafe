@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Drone Cafe User Login module', function() {
-  beforeEach(module('DroneCafe'));
+  beforeEach(module('DroneCafe.UserLogin'));
 
   let controller, scope;
 
@@ -22,4 +22,3 @@ describe('Drone Cafe User Login module', function() {
     expect(controller.newUser).toBeNull();
   });
 });
-

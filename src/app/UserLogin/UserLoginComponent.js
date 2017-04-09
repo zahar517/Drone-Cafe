@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('DroneCafe').component('userLogin', {
+angular.module('DroneCafe.UserLogin', [])
+
+.component('userLogin', {
 
   templateUrl: '/app/UserLogin/UserLogin.html',
 
