@@ -1,6 +1,13 @@
 'use strict';
 
-angular.module('DroneCafe', ['ui.router', 'ngMaterial', 'ngMessages', 'DroneCafe.UserLogin', 'DroneCafe.Customer'])
+angular.module('DroneCafe', [
+  'ui.router',
+  'ngMaterial', 
+  'ngMessages', 
+  'DroneCafe.UserLogin', 
+  'DroneCafe.Customer',
+  'DroneCafe.Order',
+  ])
 
 .config($stateProvider => {
   $stateProvider
