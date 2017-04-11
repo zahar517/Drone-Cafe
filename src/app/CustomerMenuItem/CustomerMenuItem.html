@@ -1,0 +1,8 @@
+<md-list-item class="md-3-line">
+  <div class="md-list-item-text" layout="column">
+    <h3>{{ $ctrl.dish.name }}</h3>
+    <p>Price: {{ $ctrl.dish.price }}</p>
+    <md-button ng-if="($ctrl.balance - $ctrl.dish.price) >= 0" class="md-raised md-primary" ng-click="$ctrl.makeOrder()">Make Order</md-button>
+    <div ng-if="($ctrl.balance - $ctrl.dish.price) < 0" class="little-money">Recharge your balance on {{ $ctrl.dish.price - $ctrl.balnce }}</div>
+  </div>
+</md-list-item>
