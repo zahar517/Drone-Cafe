@@ -1,0 +1,12 @@
+<div class="customer-menu">
+  <md-toolbar layout="row" class="md-hue-2">
+    <div class="md-toolbar-tools">
+      <span>{{$ctrl.title}}</span>
+    </div>
+  </md-toolbar>
+  <md-content>
+    <md-list flex>
+      <customer-menu-item dish="dish" ng-repeat="dish in $ctrl.dishes"></customer-menu-item>
+    </md-list>
+  </md-content>
+</div>
