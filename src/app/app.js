@@ -8,6 +8,7 @@ angular.module('DroneCafe', [
   'DroneCafe.Customer',
   'DroneCafe.Order',
   'DroneCafe.OrderItem',
+  'DroneCafe.CustomerMenu',
   ])
 
 .config($stateProvider => {
