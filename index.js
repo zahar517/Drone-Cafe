@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8000;
 const apiUser = require('./server/apiUser');
+const apiMenu = require('./server/apiMenu');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -20,6 +21,7 @@ mongoose.connect(dbURI);
 app.disable('x-powered-by');
 app.use(express.static(__dirname + '/src'));
 app.use('/api', apiUser);
+app.use('/api', apiMenu);
 
 app.post('/login', (req, res) => {
   const { name, email } = req.body;
