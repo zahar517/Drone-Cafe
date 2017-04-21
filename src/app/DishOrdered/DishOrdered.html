@@ -1,0 +1,13 @@
+<div class="dish-ordered">
+  <md-toolbar layout="row" class="md-hue-2">
+    <div class="md-toolbar-tools">
+      <span>Dish Ordered</span>
+    </div>
+  </md-toolbar>
+  <md-content>
+    <md-list flex>
+      <dish-ordered-item dish="dish" ng-repeat="dish in filteredDishes = ($ctrl.order | filter : {state: 1})"></dish-ordered-item>
+      <div ng-show="!filteredDishes.length">No ordered dishes</div>
+    </md-list>
+  </md-content>
+</div>
