@@ -8,10 +8,16 @@ angular.module('DroneCafe.Customer', [])
     user: '='
   },
 
-  controller: function () {
+  controller: function (userService) {
     this.title = 'Profile';
 
-    this.addMoney = () => {};
+    let data = { balance: 100 };
+
+    this.addMoney = () => {
+      userService.updateUser(data)
+        .then(res => this.user = res.data)
+        .catch(err => console.log(err));
+    };
   },
 
   templateUrl: '/app/Customer/Customer.html',
