@@ -16,7 +16,15 @@ angular.module('DroneCafe.DishOrderedItem', [])
       const newState = { state: 2 };
 
       kitchenService.changeState(dish._id, newState)
-        .then(data => kitchenService.getOrder())
+        .then(data => {
+
+          mySocket.emit('send message to', {
+            room: `user${dish._user}`,
+            dish,
+          });
+
+          return kitchenService.getOrder()
+        })
         .then(res => this.order = res.data)
         .catch(err => console.log(err));
 
