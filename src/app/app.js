@@ -11,6 +11,7 @@ angular.module('DroneCafe', [
   'DroneCafe.CustomerMenu',
   'DroneCafe.CustomerMenuItem',
   'DroneCafe.Client',
+  'DroneCafe.Kitchen',
   ])
 
 .config($stateProvider => {
