@@ -15,6 +15,7 @@ angular.module('DroneCafe', [
   'DroneCafe.DishOrdered',
   'DroneCafe.DishOrderedItem',
   'DroneCafe.DishCooking',
+  'DroneCafe.DishCookingItem',  
   ])
 
 .config($stateProvider => {
