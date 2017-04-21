@@ -39,4 +39,21 @@ router.post('/order', (req, res) => {
     .catch(err => res.sendStatus(500));
 });
 
+router.put('/order/:id', (req, res) => {
+
+  if (!req.body) return res.sendStatus(400);
+
+  console.log(`Order PUT with id=${req.params.id}, state=${req.body.state}`);
+
+  const { state } = req.body;
+
+  UserDish.findById(req.params.id)
+    .then(dish => {
+      dish.state = state;
+      return dish.save();
+    })
+    .then(dish => res.status(200).json(dish))
+    .catch(err => res.sendStatus(500));
+});
+
 module.exports = router;
