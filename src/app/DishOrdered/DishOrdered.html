@@ -6,7 +6,7 @@
   </md-toolbar>
   <md-content>
     <md-list flex>
-      <dish-ordered-item dish="dish" ng-repeat="dish in filteredDishes = ($ctrl.order | filter : {state: 1})"></dish-ordered-item>
+      <dish-ordered-item order="$ctrl.order" dish="dish" ng-repeat="dish in filteredDishes = ($ctrl.order | filter : {state: 1})"></dish-ordered-item>
       <div ng-show="!filteredDishes.length">No ordered dishes</div>
     </md-list>
   </md-content>

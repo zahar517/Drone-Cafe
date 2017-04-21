@@ -9,9 +9,18 @@ angular.module('DroneCafe.DishOrderedItem', [])
     dish: '<',
   },
 
-  controller: function () {
+  controller: function (kitchenService) {
 
-    this.startCooking = (dish) => {}
+    this.startCooking = (dish) => {
+
+      const newState = { state: 2 };
+
+      kitchenService.changeState(dish._id, newState)
+        .then(data => kitchenService.getOrder())
+        .then(res => this.order = res.data)
+        .catch(err => console.log(err));
+
+    };
 
   },
 
