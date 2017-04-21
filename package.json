@@ -42,6 +42,7 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "mongoose": "^4.9.5",
+    "netology-fake-drone-api": "^1.0.1",
     "socket.io": "^1.7.3"
   }
 }
