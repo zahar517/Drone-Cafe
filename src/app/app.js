@@ -25,6 +25,8 @@ angular.module('DroneCafe', [
       resolve: {
         user: (userService) => userService.getUser()
           .then(res => res.data),
+        order: (menuService) => menuService.getOrder()
+          .then(res => res.data)
       }
     })
 });

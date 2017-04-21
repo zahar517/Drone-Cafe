@@ -6,11 +6,10 @@ angular.module('DroneCafe.Client', [])
 
   bindings: {
     user: '<',
+    order: '<',
   },
 
   templateUrl: '/app/Client/Client.html',
 
-  controller: function () {
-    this.order = [];
-  }
+  controller: function () {}
 });
