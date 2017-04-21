@@ -15,6 +15,8 @@ angular.module('DroneCafe.DishCookingItem', [])
 
       const newState = { state: 3 };
 
+      dish.state = newState.state;
+
       kitchenService.changeState(dish._id, newState)
         .then(data => {
 

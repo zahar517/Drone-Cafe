@@ -15,6 +15,8 @@ angular.module('DroneCafe.DishOrderedItem', [])
 
       const newState = { state: 2 };
 
+      dish.state = newState.state;
+
       kitchenService.changeState(dish._id, newState)
         .then(data => {
 
