@@ -5,14 +5,13 @@ angular.module('DroneCafe.CustomerMenuItem', [])
 .component('customerMenuItem', {
 
   bindings: {
+    user: '=',
     dish: '<'
   },
 
   controller: function() {
 
-    this.balance = 0;
-
-    this.makeOrder = () => {};
+    this.makeOrder = (dish) => {};
 
   },
 
