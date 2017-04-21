@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 
 const server = require('http').createServer(app);
 
+const { Dish, User, UserDish } = require('./server/models');
 const dbURI = 'mongodb://localhost:27017/dronecafe';
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
