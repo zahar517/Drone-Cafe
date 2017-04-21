@@ -8,10 +8,13 @@ angular.module('DroneCafe.CustomerMenu', [])
     user: '=',
   },
 
-  controller: function () {
+  controller: function (menuService) {
     this.title = 'Choose dish';
 
-    this.dishes = [];
+    menuService.getMenu()
+      .then(res => this.menu = res.data)
+      .catch(err => console.log(err));
+
   },
 
   templateUrl: '/app/CustomerMenu/CustomerMenu.html',
