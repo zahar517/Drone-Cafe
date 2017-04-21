@@ -4,11 +4,22 @@ angular.module('DroneCafe.UserLogin', [])
 
 .component('userLogin', {
 
+  controller: function ($state, authService) {
+
+    this.newUser = null;
+
+    this.checkUser = newUser => {
+      authService.login(newUser)
+        .then(res => {
+          console.log(res);
+          authService.setUserId(res.data._id);
+        })
+        .catch(error => console.log(error));
+    };
+    
+    this.title = 'Drone Cafe';
+  },
+
   templateUrl: '/app/UserLogin/UserLogin.html',
 
-  controller: function () {
-    this.newUser = null;
-    this.checkUser = newUser => newUser;
-    this.title = 'Drone Cafe';
-  }
 });
