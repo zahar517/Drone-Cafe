@@ -19,4 +19,12 @@ angular.module('DroneCafe', [
       url: '',
       component: 'userLogin',
     })
+    .state('client', {
+      url: '/client',
+      component: 'client',
+      resolve: {
+        user: (userService) => userService.getUser()
+          .then(res => res.data),
+      }
+    })
 });

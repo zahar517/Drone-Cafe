@@ -12,6 +12,7 @@ angular.module('DroneCafe.UserLogin', [])
       authService.login(newUser)
         .then(res => {
           console.log(res);
+          $state.go('client');
           authService.setUserId(res.data._id);
         })
         .catch(error => console.log(error));
