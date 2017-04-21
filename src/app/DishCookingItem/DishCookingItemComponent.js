@@ -9,7 +9,7 @@ angular.module('DroneCafe.DishCookingItem', [])
     dish: '<',
   },
 
-  controller: function (kitchenService) {
+  controller: function (kitchenService, mySocket) {
 
     this.endCooking = (dish) => {
 
