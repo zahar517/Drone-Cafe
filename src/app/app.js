@@ -15,7 +15,8 @@ angular.module('DroneCafe', [
   'DroneCafe.DishOrdered',
   'DroneCafe.DishOrderedItem',
   'DroneCafe.DishCooking',
-  'DroneCafe.DishCookingItem',  
+  'DroneCafe.DishCookingItem',
+  'btford.socket-io',
   ])
 
 .config($stateProvider => {
