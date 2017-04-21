@@ -9,9 +9,15 @@ angular.module('DroneCafe.CustomerMenuItem', [])
     dish: '<'
   },
 
-  controller: function() {
+  controller: function(menuService, userService) {
 
-    this.makeOrder = (dish) => {};
+    this.makeOrder = (dish) => {
+
+      menuService.makeOrder(dish)
+        .then(res => userService.getUser())
+        .then(res => this.user = res.data)
+        .catch(err => console.log(err));
+    };
 
   },
 
