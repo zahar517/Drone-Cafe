@@ -30,4 +30,8 @@ angular.module('DroneCafe', [
           .then(res => res.data)
       }
     })
+    .state('kitchen', {
+      url: '/kitchen',
+      component: 'kitchen',
+    })
 });
