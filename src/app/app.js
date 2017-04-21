@@ -37,5 +37,9 @@ angular.module('DroneCafe', [
     .state('kitchen', {
       url: '/kitchen',
       component: 'kitchen',
+      resolve: {
+        order: (kitchenService) => kitchenService.getOrder()
+          .then(res => res.data)
+      }
     })
 });

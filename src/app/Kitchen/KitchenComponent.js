@@ -4,9 +4,11 @@ angular.module('DroneCafe.Kitchen', [])
 
 .component('kitchen', {
 
-  controller: function () {
+  bindings: {
+    order: '<'
+  },
 
-    this.order = []
+  controller: function () {
   
   },
 
