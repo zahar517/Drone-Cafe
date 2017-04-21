@@ -13,6 +13,7 @@ angular.module('DroneCafe', [
   'DroneCafe.Client',
   'DroneCafe.Kitchen',
   'DroneCafe.DishOrdered',
+  'DroneCafe.DishOrderedItem',
   ])
 
 .config($stateProvider => {

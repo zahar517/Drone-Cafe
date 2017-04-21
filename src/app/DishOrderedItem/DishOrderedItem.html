@@ -1,0 +1,7 @@
+<md-list-item class="md-2-line">
+  <div class="md-list-item-text" layout="column">
+    <h3>{{ $ctrl.dish._dish.name }}</h3>
+    <p>State: {{ $ctrl.dish.state }}</p>
+  </div>
+  <md-button class="md-raised md-primary" ng-click="$ctrl.startCooking($ctrl.dish)">Start Cooking</md-button>
+</md-list-item>
