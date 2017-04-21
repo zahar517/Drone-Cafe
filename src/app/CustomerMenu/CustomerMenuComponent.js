@@ -4,11 +4,16 @@ angular.module('DroneCafe.CustomerMenu', [])
 
 .component('customerMenu', {
 
-  templateUrl: '/app/CustomerMenu/CustomerMenu.html',
+  bindings: {
+    user: '=',
+  },
 
   controller: function () {
     this.title = 'Choose dish';
 
     this.dishes = [];
-  }
+  },
+
+  templateUrl: '/app/CustomerMenu/CustomerMenu.html',
+
 });
