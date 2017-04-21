@@ -37,6 +37,13 @@ app.post('/login', (req, res) => {
     .catch(err => res.sendStatus(500));
 });
 
+app.get('/api/users/:id', (req, res) => {
+  console.log('Users GET with params=', req.params);
+  User.findById(req.params.id)
+    .then(user => res.status(200).json(user))
+    .catch(err => res.sendStatus(500));
+});
+
 app.all('*', (req, res) => res.sendStatus(404));
 
 app.use((err, req, res, next) => {
