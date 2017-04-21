@@ -4,13 +4,17 @@ angular.module('DroneCafe.Order', [])
 
 .component('order', {
 
-  templateUrl: '/app/Order/Order.html',
+  bindings: {
+    order: '<'
+  },
 
   controller: function () {
+    
     this.title = 'Order';
 
-    this.order = [];
-
     this.addDish = () => {};
-  }
+  },
+
+  templateUrl: '/app/Order/Order.html',
+
 });

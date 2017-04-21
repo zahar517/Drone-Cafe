@@ -1,12 +1,12 @@
 <div class="order">
   <md-toolbar layout="row" class="md-hue-2">
     <div class="md-toolbar-tools">
-      <span>Order</span>
+      <span>{{ $ctrl.title }}</span>
     </div>
   </md-toolbar>
   <md-content>
     <md-list flex>
-      <order-item ng-repeat="dish in $ctrl.order"></order-item>
+      <order-item dish="dish" ng-repeat="dish in $ctrl.order"></order-item>
     </md-list>
   <md-button class="md-raised md-primary" ng-click="$ctrl.addDish()">Add dish</md-button>
   </md-content>
