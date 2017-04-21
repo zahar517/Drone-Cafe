@@ -6,6 +6,9 @@ angular.module('DroneCafe')
       getOrder: function() {
         return $http.get('/api/order');
       },
+      changeState: function(id, state) {
+        return $http.put(`/api/order/${id}`, state);
+      },
     }
     
   });
