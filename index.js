@@ -19,6 +19,24 @@ mongoose.connect(dbURI);
 app.disable('x-powered-by');
 app.use(express.static(__dirname + '/src'));
 
+app.post('/login', (req, res) => {
+  const { name, email } = req.body;
+  console.log('Try login with: ', req.body);
+
+  User.findOne({ email })
+    .then(user => {
+      if (user) return user;
+
+      user = new User({ name, email })
+
+      return user.save();
+    })
+    .then(user => {
+      res.status(200).json(user)
+    })
+    .catch(err => res.sendStatus(500));
+});
+
 app.all('*', (req, res) => res.sendStatus(404));
 
 app.use((err, req, res, next) => {
