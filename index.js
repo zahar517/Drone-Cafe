@@ -44,6 +44,23 @@ app.get('/api/users/:id', (req, res) => {
     .catch(err => res.sendStatus(500));
 });
 
+app.put('/api/users/:id', (req, res) => {
+
+  if (!req.body) return res.sendStatus(400);
+
+  console.log(`Users PUT with id=${req.params.id}, balance=${req.body.balance}`);
+
+  const { balance } = req.body;
+
+  User.findById(req.params.id)
+    .then(user => {
+      user.balance += parseInt(balance);
+      return user.save();
+    })
+    .then(user => res.status(200).json(user))
+    .catch(err => {console.log(err); return res.sendStatus(500);});
+});
+
 app.all('*', (req, res) => res.sendStatus(404));
 
 app.use((err, req, res, next) => {
