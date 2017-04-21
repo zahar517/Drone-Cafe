@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 const { Dish, User, UserDish } = require('./server/models');
 const dbURI = 'mongodb://localhost:27017/dronecafe';
@@ -54,6 +55,23 @@ app.all('*', (req, res) => res.sendStatus(404));
 app.use((err, req, res, next) => {
     console.log(err);
     if (!res.headersSent) res.sendStatus(404);
+});
+
+io.on('connection', socket => {
+
+  socket.on('subscribe', function(room) {
+    console.log('joining room', room);
+    socket.join(room);
+  });
+
+  socket.on('send message to', function(data) {
+
+    const { room, dish } = data;
+    console.log('sending room post', room);
+
+    io.sockets.in(room).emit('changeState', dish);
+  });
+
 });
 
 server.listen(PORT, () => console.log('listening port ' + PORT));
