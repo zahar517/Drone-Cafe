@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8000;
+const apiUser = require('./server/apiUser');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,6 +19,7 @@ mongoose.connect(dbURI);
 
 app.disable('x-powered-by');
 app.use(express.static(__dirname + '/src'));
+app.use('/api', apiUser);
 
 app.post('/login', (req, res) => {
   const { name, email } = req.body;
@@ -34,13 +36,6 @@ app.post('/login', (req, res) => {
     .then(user => {
       res.status(200).json(user)
     })
-    .catch(err => res.sendStatus(500));
-});
-
-app.get('/api/users/:id', (req, res) => {
-  console.log('Users GET with params=', req.params);
-  User.findById(req.params.id)
-    .then(user => res.status(200).json(user))
     .catch(err => res.sendStatus(500));
 });
 
