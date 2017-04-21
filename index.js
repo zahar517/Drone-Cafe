@@ -23,6 +23,12 @@ app.use(express.static(__dirname + '/src'));
 app.use('/api', apiUser);
 app.use('/api', apiMenu);
 
+const menuLoader = require('./server/menuLoader');
+
+menuLoader.loadMenu()
+  .then(dishes => console.log('Import menu success'))
+  .catch(err => console.log('Error with menu import:', err));
+
 app.post('/login', (req, res) => {
   const { name, email } = req.body;
   console.log('Try login with: ', req.body);
