@@ -4,14 +4,16 @@ angular.module('DroneCafe.Customer', [])
 
 .component('customer', {
 
-  templateUrl: '/app/Customer/Customer.html',
+  bindings: {
+    user: '='
+  },
 
   controller: function () {
     this.title = 'Profile';
 
-    this.username = '';
-    this.balance = 0;
-
     this.addMoney = () => {};
-  }
+  },
+
+  templateUrl: '/app/Customer/Customer.html',
+
 });
