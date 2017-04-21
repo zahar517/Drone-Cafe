@@ -1,3 +1,4 @@
+bd/
 logs/*
 !.gitkeep
 node_modules/
