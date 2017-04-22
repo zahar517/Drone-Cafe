@@ -1,8 +1,9 @@
 'use strict';
 
+const config = require('./config');
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = config.port || 8000;
 const apiUser = require('./server/apiUser');
 const apiMenu = require('./server/apiMenu');
 const apiOrder = require('./server/apiOrder');
@@ -15,7 +16,7 @@ const server = require('http').createServer(app);
 const io = require('./server/realTime').realTime(server);
 
 const { Dish, User, UserDish } = require('./server/models');
-const dbURI = 'mongodb://localhost:27017/dronecafe';
+const dbURI = config.dbUri;
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect(dbURI);
