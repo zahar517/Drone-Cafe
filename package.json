@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "http-server -a localhost -p 8000 -c-1 ./src",
+    "start": "node index.js",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "preupdate-webdriver": "npm install",
