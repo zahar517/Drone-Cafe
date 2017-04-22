@@ -12,7 +12,7 @@ angular.module('DroneCafe.Order', [])
     
     this.title = 'Order';
 
-    this.addDish = () => {};
+    this.chooseDish = () => {};
   },
 
   templateUrl: '/app/Order/Order.html',
